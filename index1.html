@@ -1,3 +1,5 @@
+<!-- innerHTMLの使い方 -->
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -25,7 +27,9 @@
                 break;
             }
             // ドキュメントで指定のIDに対して出力する内容をセットする処理作成⭐️
-            document.getElementById("Player").innerHTML = $janken_p;
+            // innerHTMLで、HTMLのid=janken_pの文字をとってくる、→$janken_pに置き換える！
+            document.getElementById("janken_p").innerHTML = $janken_p;
+            // innerHTMLで、HTMLのid=Playerのsrcをとってきて、"img/janken/janken_" + janken_p + ".jpg"に置き換える！
             document.getElementById("Player").src= "img/janken/janken_" + janken_p + ".jpg";
 
             // JavaScriptでの乱数の発生と端数切り捨ての処理
@@ -40,8 +44,10 @@
                 case 3: $janken_a = "チョキ";
                 break;
             }
-            // ドキュメントで指定のIDに対して出力する内容をセットする処理作成⭐️
-            document.getElementById("ai").innerHTML = $janken_a;
+            // ドキュメントで指定のIDに対して出力する内容をセットする処理作成
+            // innerHTMLで、HTMLのid=janken_aの文字をとってくる、→$janken_aに置き換える！
+            document.getElementById("janken_a").innerHTML = $janken_a;
+            // innerHTMLで、HTMLのid=aiのsrcをとってきて、"img/janken/janken_" + janken_a + ".jpg"に置き換える！
             document.getElementById("ai").src= "img/janken/janken_" + janken_a + ".jpg";
             
             // じゃんけんに必須な勝ち負けの判定処理を作成⭐️
@@ -49,25 +55,25 @@
                 case 1:switch(janken_a){
                         case 1: $kekka = "あいこ";
                         break;
-                        case 2: $kekka = "勝ち";
+                        case 2: $kekka = "プレイヤーの勝ち";
                         break;
-                        case 3: $kekka = "負け";
+                        case 3: $kekka = "プレイヤーの負け";
                         break;
                         }
                 break;
                 case 2:switch(janken_a){
-                        case 1: $kekka = "負け";
+                        case 1: $kekka = "プレイヤーの負け";
                         break;
                         case 2: $kekka = "あいこ";
                         break;
-                        case 3: $kekka = "勝ち";
+                        case 3: $kekka = "プレイヤーの勝ち";
                         break;
                         }
                 break;
                 case 3:switch(janken_a){
-                        case 1: $kekka = "勝ち";
+                        case 1: $kekka = "プレイヤーの勝ち";
                         break;
-                        case 2: $kekka = "負け";
+                        case 2: $kekka = "プレイヤーの負け";
                         break;
                         case 3: $kekka = "あいこ";
                         break;
@@ -75,13 +81,14 @@
                 break;
             }
             // ドキュメントで指定のIDに対して出力する内容をセットする処理作成⭐️
+            // innerHTMLで、HTMLのplayをとってきて、$kekkaに置き換える！
             document.getElementById("play").innerHTML = $kekka;
         }
     </script>
 
     <body>
         <!-- じゃんけんの結果出力箇所作成 -->
-        <p id="play"></p><br>
+        <p id="play">結果は、、、？</p><br>
 
         <!-- じゃんけん開始ボタンを作成して関数セット！ -->
         <p id = "but"><buttom onclick="Saikoro();">じゃんけん！</a></p>
