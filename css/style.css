@@ -1,4 +1,5 @@
 #attribute{
+    margin-left : 340px;
     display: flex;
     flex-direction: row;
 }
@@ -15,5 +16,14 @@
     
 }
 p{
+    padding: 5px;
     text-align: center;
+}
+
+#but{margin-left: 340px;
+    width: 150px;
+    background-color: yellow;
+    font-family: auto;font-size: 20px;
+    color: blue;
+    font-weight: bold;
 }
